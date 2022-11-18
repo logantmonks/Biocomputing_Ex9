@@ -1,0 +1,34 @@
+# Exercise 09 - Jaden Bailey
+# 18 November 2022
+
+#Problem 1
+
+#My data set is the number of fantasy points Titans running back Derrick Henry has scored throughout the season and comparing that to the points scored by the Titans in the real football game.
+
+Fantasy_Reality <- read.csv(Exercise9Data.csv)
+
+libraryr(ggplot2)
+
+ggplot(data = Fantasy_Reality, 
+aes(x = Derrick Henry Fantasy Points, y = Titans Points Scored))+
+geom_point()+
+xlab("D.Henry Fantasy Points")+
+ylab("Titans Points Scored")+
+geom_smooth(method=lm)
+
+#Problem 2
+
+data <- read.table("data.txt")
+ggplot(data=data, aes(x = region, y = observations))+
+stat_summary(geom = "bar", fun.y = "mean")+
+xlab("Region")+
+ylab("Average Population Size")
+
+
+ggplot(data = data, aes(x = region, y = observations))+
+geom_jitter()+
+xlab("Region")+
+ylab(Population Size")
+
+#The bar and scatter plot tell different stories about the data. Because the bar graph grouos together data some of the
+#variance can be lost. In this example, the bar plot tells the viewer that the average population sizes were comparable/close across regions. The scatter plots revealed that the regions differed in variance and in some cases regions were clustered
